@@ -1,0 +1,41 @@
+
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'about' %}" target="_blank">
+          <img src="{% static 'accounts/images/circle-o.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+          <!-- <span style="color: #ee4e7e">-->Blogg<!--</span>-->
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+            <li class="nav-item ">
+                <a class="nav-link" href="{% url 'logout'%}"> {{ user.username }} Logout here</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'password_reset' %}">Reset password</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'signup' %}">SignUp</a>
+            </li>
+            {% endif %}
+          </ul>
+    </div>
+</nav>
+
+

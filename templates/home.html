@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+{% include 'partials/nav-bar.html' %}
+<div class="jumbotron">
+    <h1>Blogg</h1>
+    <p>Welcome to Blogg this WebSite is created by <kbd>Venkat Maragani</kbd></p>
+    <p style="font-size: 0.8em;">this website can be used for other purposes go to <a href="{% url 'about' %}">about</a> for more info</p>
+</div>
+<div class="jumbotron">
+{% if user.is_authenticated %}
+Welcome <b>{{ user.username }} !</b>
+{% else %}
+    <p>You are not logged in</p>
+    <p>LogIn to an account please</p>
+{% endif %}
+</div>
+{% endblock %}
