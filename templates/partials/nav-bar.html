@@ -2,8 +2,8 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="{% url 'about' %}" target="_blank">
-          <img src="{% static 'accounts/images/circle-o.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
-          <!-- <span style="color: #ee4e7e">-->Blogg<!--</span>-->
+          <img src="{% static 'images/circle-o.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+          <!-- <span style="color: #ee4e7e">-->Blue D<!--</span>-->
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -16,6 +16,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'posts' %}">Posts</a>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
