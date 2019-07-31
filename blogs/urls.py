@@ -24,6 +24,5 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('about/', TemplateView.as_view(template_name='about.html'), name='about'),
     path('blog/',include("blog.urls")),
-    #path('/favicon.ico',)
-]
 
+]

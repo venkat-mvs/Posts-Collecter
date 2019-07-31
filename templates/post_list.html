@@ -9,8 +9,8 @@
         {% for i in posts %}
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"> {{ i.title }} </h5>
-                    <pre class="card-text"> {{ i.text }}</pre>
+                    <h5 class="card-title"> {{ i.title|slugify }} </h5>
+                    <div class="card-text"> {{ i.text|safe }}</div >
                     <span><b>author </b>- {{ i.author }}</span>
                 </div>
             </div>

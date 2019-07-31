@@ -2,12 +2,21 @@
 {% block title %}Blue D | LOGIN{% endblock %}
 
 {% block content %}
-<center><h2>Login</h2></center>
+{% include 'partials/nav-bar.html' %}<br>
+<center><h2>SignIn</h2></center>
+<style>
+		label{
+			font-weight: bold;
+		}
+		.errorlist{
+			color: rgba(255,0,0,.5);font-size:15px;list-style-type: none;
+		}
+	</style>
 <div style="text-align: center">
 <form method="post"  class="container jumbotron align-center">
 	{% csrf_token %}
 	{{ form.as_p }}
-	<button type="submit">Login</button></center>
+	<button type="submit"class="btn btn-primary">SignIn</button></center>
 </form>
 </div>
 {% endblock %}

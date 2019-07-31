@@ -1,9 +1,10 @@
 
 {% load static %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
         <a class="navbar-brand" href="{% url 'about' %}" target="_blank">
           <img src="{% static 'images/circle-o.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
-          <!-- <span style="color: #ee4e7e">-->Blue D<!--</span>-->
+          <span style="color: #3498db">Blue D</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -24,14 +25,14 @@
           <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
             <li class="nav-item ">
-                <a class="nav-link" href="{% url 'logout'%}"> {{ user.username }} Logout here</a>
+                <a class="nav-link" href="{% url 'logout'%}">SignOut Here</a>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
               <a class="nav-link" href="{% url 'password_reset' %}">Reset password</a>
-            </li>
+            </li>-->
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'login' %}">Login</a>
+              <a class="nav-link" href="{% url 'login' %}">SignIn</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'signup' %}">SignUp</a>

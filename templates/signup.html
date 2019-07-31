@@ -3,10 +3,37 @@
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
-    <h2>Sign Up</h2>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Sign up</button>
-    </form>
+{% include 'partials/nav-bar.html' %}<br>
+<center><h2>Sign up</h2></center>
+<style>
+    label{
+        font-weight: bold;
+    }
+</style>
+<div style="text-align: center;"class="container jumbotron align-center">
+<form method="post">
+  {% csrf_token %}
+    <p>
+      <label for="id_username">Username :</label>
+      <input type="text" name="username" value="sdkjkldskal" required="" autofocus="" id="id_username" maxlength="150">
+    </p>
+    <p>   
+      <label for="id_password1">Password :</label>
+      <input type="password" name="password1" required="" id="id_password1">
+    </p>
+    <p>
+        <label for="id_password2">Confirm :</label>
+        <input type="password" name="password2" required="" id="id_password2">
+    <p>
+    </p>
+  
+  <button type="submit" class="btn btn-primary">Sign up</button>
+  {% for field in form %}
+    {% for error in field.errors %}
+            <p style="color: rgba(255,0,0,.5);font-size:15px;">{{ error }}</p>
+    {% endfor %}
+    {% endfor %}
+
+</form>
+</div>
 {% endblock %}
